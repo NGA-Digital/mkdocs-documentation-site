@@ -1,6 +1,7 @@
 site_name: NGA Digital Platforms
 theme:
   name: material
+  custom_dir: overrides
 nav:
   - Home: index.md
   - NGA Website: nga-website.md
