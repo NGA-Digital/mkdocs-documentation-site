@@ -38,8 +38,8 @@ We maintain two sites:
 
 Production is our live site.
 
-Live: https://nga.gov.au
-Admin: https://nga.gov.au/nga-admin
+- Live: https://nga.gov.au
+- Admin: https://nga.gov.au/nga-admin
 
 Both sites are hosted by Serversaurus. 
 
@@ -47,12 +47,12 @@ Both sites are hosted by Serversaurus.
 
 The staging site is a copy of the live website used for testing and development before applying changes to the live environment.
 
-Live: https://staging.nga.gov.au
-Admin: https://staging.nga.gov.au/nga-admin
+- Live: https://staging.nga.gov.au
+- Admin: https://staging.nga.gov.au/nga-admin
 
 To view the staging site you will need the following credentials:
 
-Username: nga
+Username: nga<br>
 Password: preview
 
 ### Caching
@@ -62,6 +62,7 @@ Normally, every time someone visits a page a request is sent to the site server.
 Site caching prevents this. When a page is first loaded by a visitor it is saved in a temporary storage location (cache). Now, every visitor after that loads the cache rather than sending a request to the server.
 
 This has two benefits:
+
 1. It improves site performance because the server doesn't have to process every request
 2. Visitors can still view the site even when there is an issue with the server
 
@@ -77,93 +78,67 @@ When a page is published, the cache for that page is flushed. This ensures that 
 
 There often times we will want to manually clear the cache. To do so you will need to:
 
-- Log into the PeakHour admin
-- Navigate to Domains > Active Domains > nga.gov.au > Manage
-![alt text](img/content.webp)
-- Navigate to CDN > Purge > Full site purge > Flush
+* Log into the PeakHour admin
+* Navigate to Domains > Active Domains > nga.gov.au > Manage
+  ![alt text](img/content.webp)
+* Navigate to CDN > Purge > Full site purge > Flush
 
 #### Bot blocking
+
 Peakhour restricts bots from accessing our site. 
 
 Sometimes this means friendly traffic can't view the site. To whitelist this traffic you will need to get their IP address and add it to the safe list. 
 
 To do this:
 
-- Log into the PeakHour admin
-- Navigate to Domains > Active Domains > nga.gov.au > Manage
-- Go to Firewall > Access Rules
-
- 
-
-
+* Log into the PeakHour admin
+* Navigate to Domains > Active Domains > nga.gov.au > Manage
+* Go to Firewall > Access Rules
 
 Add the IP address
 
-Tessitura
+## Tessitura
 
 Information about our site and Tessitura can be found here. 
 
-Online publications / Online student publications
+## Online publications / Online student publications
 
 Online publications are microsites that are self-contained digital publications. So far these are:
 
-Raushenberg & Johns: significant others
-
-Ceremony
-
-Stories: Australian People and Places
+- Raushenberg & Johns: significant others
+- Ceremony
+- Stories: Australian People and Places
 
 These were built by Distil Immersive. 
 
 Full documentation can be found at NGA Digital Publications – Technical documentation.
 
-Image licensing request portal
+## Image licensing request portal
 
 Members of the public can request to license a work of art, image or website content. 
 
-Making a request
+### Making a request
 
 The website provides two paths to make a request:
 
 1. Through a work of art page on Search the Collection
-
-
-
 2. Through the License Request form: https://nga.gov.au/licence-request/1/items-selection/
 
-Viewing requests
+### Viewing requests
 
 All requests are saved at Copyright Licence > Licence Requests  (note that pre-2026 requests are found at https://nga.gov.au/nga-admin/licence/licencerequest/).
 
+License Request form copy can be edited at `Coypright Licence > Copyright Settings`
 
+To export License Request details to an external spreadsheet, a copy function exists at `Copyright Licence > Spreadsheet`
 
-
-
-
-
-License Request form copy can be edited at Coypright Licence > Copyright Settings
-
-
-
-
-
-To export License Request details to an external spreadsheet, a copy function exists at Copyright Licence > Spreadsheet
-
-
-
-
-
-
-
-Permissions
+### Permissions
 
 Admin access to license requests are limited to the Copyright Admin group. Admin users must be added to this group to view, edit and delete license requests.
 
-Onsite digital wayfinding screens
+## Onsite digital wayfinding screens
 
 The Gallery has multiple on-premises screens that show exhibition location. E.g:
-
-
 
 These pages are authored in the Wagtail CMS. 
 
@@ -173,106 +148,76 @@ The screens automatically pull exhibition titles, dates and gallery location fro
 
 To ensure all content fits on the screens (1080 x 1920) there is a scaling device in the admin that can shrink or expand the type size:
 
-
-
-
-
-Security
+## Security
 
 During an elevated security alert we have additional measures we can implement.
 
-Implement basic authentication on login page
+### Implement basic authentication on login page
 
 Basic authentication is a simple way to prevent access to a web page using a username and password. When a visitor tries to access a page, the are presented with the following window:
 
-
-
-
-
-
-
 By implementing this on the site's admin login page (nga.gov.au/nga-admin), we add an extra layer of security to accessing the site's admin.
 
-How to implement
+#### How to implement
 
 Contact the Interaction Consortium on support@interaction.net.au
 
-Request for "basic auth to be implemented on nga.gov.au/nga-admin". Provide them with username and password you would like to use.
+Request for "basic auth to be implemented on nga.gov.au/nga-admin". Provide them with a username and password you would like to use.
 
 Once this is done, they will make a deployment to Production to make it live
 
 Inform key admins that this has been done and share the username and password
 
-Disable accounts
+### Disable accounts
 
 Disabling CMS accounts will ensure only key site admins can access the CMS.
 
-How to implement
+#### How to implement
 
 Contact the Interaction Consortium on support@interaction.net.au
 
 Request for them to "disable all CMS admin accounts through a command line database query". Ensure you let them know which key accounts you would like to remain active.
 
-Change origin to static page
-
+### Change origin to static page
 
 If the site is compromised, vandalised or taken down, we have a static page that we can point our domains to. This page can be found at https://papaya-lolly-8d148f.netlify.app/.
 
-
-
-How to implement
+#### How to implement
 
 Log into the Peakhour dashboard
 
 Navigate to Domains > relevant domain (e.g nga.gov.au) > Manage
- 
-
-
 
 Navigate to Edge > Rules and tick “Maintenance”
- 
 
-
-
-
-
- 
-
-Troubleshooting
+## Troubleshooting
 
 What should I do if the site is down
 
 First notify:
-- Digital Platforms Manager
-- Online Content Producer
+
+* Digital Platforms Manager
+* Online Content Producer
 
 They will then follow this procedure.
 
 Notify:
-- The IC support@interaction.net.au.
-- PeakHour dan@peakhour.io / support@peakhour.io
+
+* The IC support@interaction.net.au.
+* PeakHour dan@peakhour.io / support@peakhour.io
 
 When you contact them please include as many details as you can:
 
-What time you started noticing the issue
-
-The URL where you’re seeing the error(s)
-
-What errors you’re seeing:
-
-Is the site not responding at all
-
-Are you getting a 500 error
-
-Are you getting a 404
-
-Who is seeing the issue (please check each of these):
-
-Logged out users on the public (outside NGA) network (you can check this with your phone with wifi turned off)
-
-Logged out users on the NGA network
-
-Logged in admin users
+- What time you started noticing the issue
+- The URL where you’re seeing the error(s)
+- What errors you’re seeing:
+  - Is the site not responding at all
+  - Are you getting a 500 error
+  - Are you getting a 404
+- Who is seeing the issue (please check each of these):
+  - Logged out users on the public (outside NGA) network (you can check this with your phone with wifi turned off)
+  - Logged out users on the NGA network
+  - Logged in admin users
 
 From experience, a site outage is usually either an issue at PeakHour or, more rarely, an issue at Serversaurus.  
 
@@ -280,10 +225,7 @@ If people outside the NGA network can access the site (you can test this by tryi
 
 On the other hand, if people inside NGA can access the site just fine, but people outside NGA can’t – you almost certainly have an issue with PeakHour. The first thing to do is to try flushing the cache, but if that doesn’t resolve things then contact PeakHour and CC IC support.
 
-Key contacts
-
-Developers – Interaction Consortium support@interaction.net.au
-
-Servers – Serversaurus martin@serversaurus.com.au
-
-Caching – Peakhour dan@peakhour.io / support@peakhour.io
+## Key contacts
+- Developers – Interaction Consortium support@interaction.net.au
+- Servers – Serversaurus martin@serversaurus.com.au / support@serversaurus.com.au
+- Caching – Peakhour dan@peakhour.io / support@peakhour.io
