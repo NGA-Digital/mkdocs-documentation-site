@@ -1,4 +1,4 @@
 site_name: NGA Digital Platforms
 theme:
-  name: material
+  name: shadcn
   custom_dir: overrides

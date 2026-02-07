@@ -55,7 +55,7 @@ To view the staging site you will need the following credentials:
 Username: nga<br>
 Password: preview
 
-### Caching
+## Caching
 
 Normally, every time someone visits a page a request is sent to the site server. The server then needs to process this request and send the page contents back to the visitor.
 
