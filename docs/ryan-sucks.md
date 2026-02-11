@@ -1,3 +1,6 @@
+---
+title: Ryan sucks
+---
 # Ryan sucks
 
 ## Hon rules
