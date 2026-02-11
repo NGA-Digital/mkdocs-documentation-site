@@ -7,6 +7,8 @@ title: NGA Website
 
 The NGA Website is the online home of the Gallery. It seeks to serve the Gallery's goals by:
 
+Hon rules
+
 **Providing Gallery Information** – Essential details like the gallery's history, mission, location, hours, contact information, and staff bios.
 
 **Promoting Exhibitions and Events** – It provides information about upcoming exhibitions, openings and special events, allowing visitors to stay informed about gallery programming.
