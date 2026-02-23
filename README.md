@@ -37,8 +37,8 @@ Optional but recommended:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ORG/REPO.git
-cd REPO
+git clone https://github.com/NGA-Digital/mkdocs-documentation-site.git
+cd mkdocs-documentation-site
 ```
 
 ### 2. Setup virtual environment
@@ -51,6 +51,7 @@ To launch the venv, run `source env/bin/activate`
 
 ### 4. Run local dev server
 `mkdocs serve`
+
 The site should auto reload when markdown files change.
 
 ## 🗂 Project Structure
