@@ -51,6 +51,7 @@ To launch the venv, run `source env/bin/activate`
 
 ### 4. Run local dev server
 `mkdocs serve`
+If your local dev server doesn't automatically reload, use `mkdocs serve --livereload`
 
 The site should auto reload when markdown files change.
 
