@@ -104,3 +104,56 @@ Once logged in, they can access the CMS at /admin and edit content according to 
 - Existing users can be deactivated or deleted from the Identity panel.
 - User roles can be adjusted (Editor/Admin) to control access within Decap CMS.
 - Netlify Identity integrates with Git Gateway to allow CMS changes to be committed to the repository.
+
+## 🔐 Site Authentication (Netlify Identity)
+
+This MkDocs site is protected using **Netlify Identity**. Users must log in before they can view any pages.
+
+Authentication is handled client-side using the Netlify Identity widget. All pages are gated except the `/login/` page.
+
+---
+
+### How It Works
+
+- Netlify Identity is enabled in the Netlify dashboard.
+- A global script is injected via a MkDocs theme override (`/overrides/main.html`).
+- If a user is **not logged in**, they are redirected to `/login/`.
+- After successful login, the user is redirected to the homepage.
+
+---
+
+### Theme Override
+
+Authentication is implemented in `overrides/main.html`.
+
+The script:
+- Loads the Netlify Identity widget
+- Checks whether a user session exists
+- Redirects unauthenticated users
+- Excludes `login.md` from redirect logic to prevent loops
+
+Example logic used:
+
+```jinja
+{% if page.url != "/login/" %}
+  <script>
+    netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.location.href = "/login/";
+      }
+    });
+
+    netlifyIdentity.on('login', () => {
+      document.location.href = "/";
+    });
+  </script>
+{% endif %}
+```
+
+### Login Page
+
+The login page is located at `docs/login.md`
+
+It contains `<div data-netlify-identity-menu></div>`
+
+This renders the Netlify login/logout UI automatically.
