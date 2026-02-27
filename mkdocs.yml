@@ -2,3 +2,4 @@ site_name: NGA Digital Platforms
 theme:
   name: material
   custom_dir: overrides
+not_in_nav: /login.md
