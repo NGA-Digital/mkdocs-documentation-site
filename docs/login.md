@@ -1,3 +1,6 @@
+---
+title: Login
+---
 # Login
 
 Please sign in to view this site.
