@@ -92,7 +92,7 @@ CMS user accounts are managed via Netlify Identity, which provides:
 
 #### Inviting Editors
 1. Go to your site dashboard on Netlify using digital@nga.gov.au.
-2. Navigate to Site Settings → Identity → Invite Users.
+2. Navigate to Project Configuration → Identity → Users.
 3. Enter the editor’s email address and send an invitation.
 
 The invited user receives an email and can create a Netlify Identity account.
